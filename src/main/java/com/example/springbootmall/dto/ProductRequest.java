@@ -1,25 +1,28 @@
-package com.example.springbootmall.model;
+package com.example.springbootmall.dto;
 
 import com.example.springbootmall.constant.ProductCategory;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 
-public class Product {
-    private Integer productId;
+public class ProductRequest {
+    @NotNull
     private String productName;
+    @NotNull
     private ProductCategory category;
+    @NotNull
     private String imageUrl;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer stock;
     private String description;
-    private Date createDate;
-    private Date lastModifiedDate;
-    public Integer getProductId() {
-        return productId;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProductName() {
@@ -62,29 +65,6 @@ public class Product {
         this.stock = stock;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 
 
 }
